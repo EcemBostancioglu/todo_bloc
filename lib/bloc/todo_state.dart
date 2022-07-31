@@ -5,14 +5,10 @@ abstract class TodoState {}
 
 class TodoInitial extends TodoState {}
 
-class AddTodoState extends TodoState{}
-
-class GetTodoState extends TodoState{
+class AddTodoState extends TodoState{
   final List<Todo> todoList;
 
-  GetTodoState({required this.todoList});
-
-
+  AddTodoState({required this.todoList});
 }
 
 

@@ -13,11 +13,9 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
     on<TodoEvent>((event, emit) {
     });
 
-    on<GetTodoEvent>((event, emit) {
-      emit(GetTodoState(todoList: todos));
-    });
-
     on<AddTodoEvent>((event,emit){
+      todos.add(event.todo);
+      emit(AddTodoState(todoList: todos));
     });
   }
 }

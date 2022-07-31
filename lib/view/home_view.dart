@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
                 context: context,
                 builder: (context)=> const AddToDo());
           },
-          elevation: 8,
+          elevation:10,
           child: Icon(Icons.add,
               size:30.sm),
         ),
