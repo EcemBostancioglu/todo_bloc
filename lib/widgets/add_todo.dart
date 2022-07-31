@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_bloc/constants/constants.dart';
 
 class AddToDo extends StatefulWidget {
   const AddToDo({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class _AddToDoState extends State<AddToDo> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title:const Text('Add To-Do'),
+      title: Text(addToDo),
       shape:const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
             Radius.circular(20)),
@@ -43,16 +44,16 @@ class _AddToDoState extends State<AddToDo> {
           children: [
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'Title',
-                labelText: 'Title',
-                errorText: _validate ? 'Title can\'t be empty' : null
+                hintText: title,
+                labelText: title,
+                errorText: _validate ? warning : null
               ),
               controller:titleController,
             ),
             TextFormField(
-              decoration:const InputDecoration(
-                  hintText: 'Description',
-                  labelText: 'Description',
+              decoration: InputDecoration(
+                  hintText: description,
+                  labelText: description,
               ),
               controller:descriptionController,
             ),
@@ -60,12 +61,13 @@ class _AddToDoState extends State<AddToDo> {
               padding: EdgeInsets.only(top:20.w),
               child: ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.pink.shade600),
+                  backgroundColor: MaterialStateProperty.all(
+                      Colors.pink.shade600),
                 ),
                 onPressed: (){
                   Navigator.pop(context);
               },
-                child:const Text('Add'),
+                child:Text(add),
               ))],
         ),
       ),

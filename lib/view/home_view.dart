@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_bloc/constants/constants.dart';
 import 'package:todo_bloc/widgets/add_todo.dart';
 
 class HomeView extends StatelessWidget {
@@ -29,7 +30,7 @@ class HomeView extends StatelessWidget {
                  backgroundColor: Colors.transparent,
                 expandedHeight: 200.h,
                  flexibleSpace: FlexibleSpaceBar(
-                    background: Image.asset('assets/images/good_vibes.jpg',
+                    background: Image.asset(goodVibes,
                   fit: BoxFit.fitWidth),
              ),
             ),
@@ -39,7 +40,7 @@ class HomeView extends StatelessWidget {
                      return ListTile(
                        title: Padding(
                          padding: EdgeInsets.all(8.w),
-                         child: Text('Good Vibes Only'),
+                         child: Text(goodVibesOnly),
                        ),
                      );
                    },
