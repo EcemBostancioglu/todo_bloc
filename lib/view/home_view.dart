@@ -10,23 +10,21 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor:Colors.pink.shade600,
+          onPressed: (){
+            showDialog(
+                context: context,
+                builder: (context)=> const AddToDo());
+          },
+          elevation: 8,
+          child: Icon(Icons.add,
+              size:30.sm),
+        ),
         body: SafeArea(
           child: CustomScrollView(
              slivers: [
                SliverAppBar(
-                 actions: [
-                   Padding(
-                     padding: EdgeInsets.only(right:10.w,top: 10.h),
-                     child: IconButton(
-                         onPressed:(){
-                           showDialog(context: context,
-                             builder: (context)=> const AddToDo());
-                         },
-                         icon: Icon(Icons.add,
-                           color: Colors.pink.shade600,
-                         size:40.sm)),
-                   )
-                 ],
                  backgroundColor: Colors.transparent,
                 expandedHeight: 200.h,
                  flexibleSpace: FlexibleSpaceBar(
