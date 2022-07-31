@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_bloc/widgets/add_todo.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -15,14 +16,17 @@ class HomeView extends StatelessWidget {
                    Padding(
                      padding: EdgeInsets.only(right:10,top: 10),
                      child: IconButton(
-                         onPressed:(){},
+                         onPressed:(){
+                           showDialog(context: context,
+                             builder: (context)=> const AddToDo());
+                         },
                          icon: Icon(Icons.add,
-                           color: Colors.purple.shade600,
+                           color: Colors.pink.shade600,
                          size: 40)),
                    )
                  ],
                  backgroundColor: Colors.transparent,
-                expandedHeight: 250.0,
+                expandedHeight: 270.0,
                  flexibleSpace: FlexibleSpaceBar(
                     background: Image.asset('assets/images/good_vibes.jpg',
                   fit: BoxFit.fitWidth),
