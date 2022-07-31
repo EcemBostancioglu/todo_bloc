@@ -50,26 +50,3 @@ class HomeView extends StatelessWidget {
     );
   }
 }
-
-//CustomScrollView(
-//           slivers: [
-//             SliverAppBar(
-//               toolbarHeight:250,
-//               flexibleSpace: FlexibleSpaceBar(
-//                 background: Image.asset('assets/images/good_vibes.jpg',
-//                     fit: BoxFit.cover),
-//               ),
-//             ),
-//             SliverToBoxAdapter(
-//               child: ListView.builder(
-//                 physics:AlwaysScrollableScrollPhysics(),
-//                   shrinkWrap: true,
-//                   itemCount: 16,
-//                   itemBuilder: (context,index){
-//                     return ListTile(
-//                       title: Text('Good Vibes Only'),
-//                     );
-//                   }),
-//             ),
-//           ],
-//         ),
