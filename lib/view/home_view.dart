@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_bloc/widgets/add_todo.dart';
 
 class HomeView extends StatelessWidget {
@@ -14,7 +15,7 @@ class HomeView extends StatelessWidget {
                SliverAppBar(
                  actions: [
                    Padding(
-                     padding: EdgeInsets.only(right:10,top: 10),
+                     padding: EdgeInsets.only(right:10.w,top: 10.h),
                      child: IconButton(
                          onPressed:(){
                            showDialog(context: context,
@@ -22,11 +23,11 @@ class HomeView extends StatelessWidget {
                          },
                          icon: Icon(Icons.add,
                            color: Colors.pink.shade600,
-                         size: 40)),
+                         size:40.sm)),
                    )
                  ],
                  backgroundColor: Colors.transparent,
-                expandedHeight: 270.0,
+                expandedHeight: 200.h,
                  flexibleSpace: FlexibleSpaceBar(
                     background: Image.asset('assets/images/good_vibes.jpg',
                   fit: BoxFit.fitWidth),
@@ -36,10 +37,10 @@ class HomeView extends StatelessWidget {
                  delegate: SliverChildBuilderDelegate(
                        (_, int index) {
                      return ListTile(
-                       leading: Container(
-                           padding: EdgeInsets.all(8),
-                           width: 100),
-                       title: Text('Good Vibes Only'),
+                       title: Padding(
+                         padding: EdgeInsets.all(8.w),
+                         child: Text('Good Vibes Only'),
+                       ),
                      );
                    },
                    childCount: 20,

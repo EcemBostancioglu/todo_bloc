@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddToDo extends StatefulWidget {
   const AddToDo({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class _AddToDoState extends State<AddToDo> {
   dynamic _formKey;
   final TextEditingController titleController=TextEditingController();
   final TextEditingController descriptionController=TextEditingController();
-  bool _validate=false;
+  final bool _validate=false;
 
   @override
   void initState() {
@@ -40,7 +41,7 @@ class _AddToDoState extends State<AddToDo> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(
+            TextFormField(
               decoration: InputDecoration(
                 hintText: 'Title',
                 labelText: 'Title',
@@ -48,15 +49,15 @@ class _AddToDoState extends State<AddToDo> {
               ),
               controller:titleController,
             ),
-            TextField(
-              decoration: InputDecoration(
+            TextFormField(
+              decoration:const InputDecoration(
                   hintText: 'Description',
                   labelText: 'Description',
               ),
               controller:descriptionController,
             ),
             Padding(
-              padding:const EdgeInsets.only(left:160,top: 20),
+              padding: EdgeInsets.only(top:20.w),
               child: ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.pink.shade600),
