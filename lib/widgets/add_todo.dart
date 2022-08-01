@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_bloc/bloc/todo_bloc.dart';
 import 'package:todo_bloc/constants/constants.dart';
+import 'package:todo_bloc/model/todo.dart';
 
 class AddToDo extends StatefulWidget {
   const AddToDo({Key? key}) : super(key: key);
@@ -65,7 +68,14 @@ class _AddToDoState extends State<AddToDo> {
                       Colors.pink.shade600),
                 ),
                 onPressed: (){
-                  Navigator.pop(context);
+                  if(_formKey.currentState.validate()){
+                    BlocProvider.of<TodoBloc>(context).add(
+                        AddTodoEvent(todo: Todo(
+                        title: titleController.text,
+                        description: descriptionController.text)));
+                    Navigator.pop(context);
+                  }
+
               },
                 child:Text(add),
               ))],
